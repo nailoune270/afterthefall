@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Echo of the Sea - After the Fall</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 15px 25px;
+            z-index: 100;
+            background: transparent;
+            transition: all 0.3s ease;
+            text-align: right;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        nav.scrolled {
+            background-color: rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        nav.hidden {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.3em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #4facfe;
+        }
+
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            background: url('image/2.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.2), rgba(255,255,255,0.3));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding-bottom: 40px;
+        }
+
+        .hero-overlay h1 {
+            font-family: 'Brush Script MT', 'Segoe Script', cursive;
+            font-size: 3em;
+            color: white;
+            font-weight: normal;
+            opacity: 0.9;
+            letter-spacing: 6px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-section {
+            animation: slideDown 0.8s ease-out forwards;
+        }
+
+        main {
+            opacity: 0;
+            animation: slideUp 0.8s ease-out 0.3s forwards;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 30px;
+        }
+
+        .story-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .story-header h2 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .story-header .author {
+            color: #5a6c7d;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+
+        .story-content {
+            font-size: 1.1em;
+            color: #4a5568;
+            text-align: justify;
+        }
+
+        .story-content p {
+            margin-bottom: 1.5em;
+            text-indent: 2em;
+        }
+
+        .story-image {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .story-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .story-image .caption {
+            margin-top: 15px;
+            color: #666;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        .placeholder-image {
+            background: linear-gradient(145deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 8px;
+            padding: 80px 40px;
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            border: 1px solid #e0e0e0;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            margin-top: 60px;
+            border-top: 1px solid #eee;
+        }
+
+        footer p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #4facfe;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Homepage</a>
+        <a href="about.html">About Us</a>
+    </nav>
+
+    <div class="hero-section">
+        <div class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+    </div>
+
+    <main>
+        <div class="story-header">
+            <h2>The Echo of the Sea</h2>
+            <p class="author">By Erik</p>
+        </div>
+
+        <div class="story-content">
+            <p>Stubborn, frenzied, and utterly devout, Elias sat shirtless on the jagged black reefs. His body was covered in scars. Holding a blade carved from the tooth of an ancient azure dragon and etched with forbidden runes, he frantically stabbed it into the radiating scar on his left chest. On the eve of the storm, Blackwater Bay was filled with the deafening roar of waves crashing against the rocks. The air thick with the stench of decaying sea monsters and a slippery, ice-cold primal magic. The sense of an altar trembling in the gale, along with the ancient sea-god inscriptions beneath him glowing blue as they drank his blood, perfectly matched the dark sacrificial rituals described in the old witch's books back in the village.</p>
+
+            <p>Elias had to tear through the bonds of his flesh at this very moment. All his remaining years, his nightmares, and fifteen years of self-exile pointed to a single belief: only when the body is on the verge of death can the soul break free to enter the legendary "Lightless Sea." As dizziness from the blood loss washed over him, Elias remembered fifteen years ago, when he was just an ordinary sailor. In a once-in-a-century storm, his cargo ship was crushed by mountain-high waves. He fell into a freezing vortex, and just as his lungs were about to burst, he saw her. Amidst the disastrous waves stood a woman with moss-green hair and skin like white jade. Deep in her eyes, ghostly blue flames flickered. She was beautiful and full of sorrow, standing silently between the giant waves. She discovered him, but she simply walked past. Before diving into the deeper ocean, she paused for a single second and looked back at him. In that gaze, there was no other emotion—only endless pity.</p>
+
+            <p>That one second became Elias's curse for the next fifteen years. He survived, but he turned into a complete madman. He studied forbidden magic and dug up ancient tombs just to uncover the truth behind that meeting. He longed to see those blue eyes again—the eyes that had abandoned him in the storm yet looked back with that lingering gaze. However, standing in his way were not only the vengeful ghosts of the Lightless Sea, capable of tearing a mortal soul to shreds, but also his own body, which had become fragile and broken after countless failed rituals.</p>
+        </div>
+
+        <div class="story-content">
+            <p>He let out a low, animal-like growl, forcing all his remaining magic into the ancient bone blade. He offered his body as a sacrifice to force open a soul-path to the forbidden deep. Yes, his soul felt a terrifying pull as the world around him twisted violently. He caught a glimpse of that deep sea where no sunlight reaches, filled with the cries of wandering spirits. But the black shadow-chains that guard the abyss instantly wrapped around his soul, trying to crush him before he could reach the truth. No, his body began to break apart, unable to handle the pressure of crossing dimensions. Blood poured out like a spring, staining the altar red. And even worse, a freezing current from the abyss surged from the scar on his chest, swallowing his last bit of consciousness. The shadows whispered to him: Give up. Mortals are not worthy of seeing the face of a god.</p>
+
+            <p>Elias ignored the death of his flesh. Holding his final breath, at the moment his soul was about to be buried by darkness, he used every ounce of willpower to scream the true name of the sea goddess—a name he had been too afraid to speak for fifteen years. The path collapsed at that instant. On the reefs of Blackwater Bay, only an empty, cold shell covered in tattoos and runes remained.</p>
+
+            <p>Ten thousand meters below, in the silent seabed, the gates of the great basalt palace glowed with a faint, warm blue light. A figure drifted slowly toward the newly fallen soul. Even then, the stubborn, frenzied, and devout face of Elias (now a spirit) remained turned toward the direction he had dreamed of for years. A small tremor of relief touched the corner of his mouth. He did not return to her as a living man. He had become a ghost, a spirit who had forever lost the right to return to the land. But he didn't care. As the blue light illuminated his soul, he finally saw those eyes again. This time, they were no longer cold and distant, but filled with a faint touch of surprise.</p>
+
+            <p>He had chased her for a lifetime. He had finally jumped from the shore into the sea, falling from the light into the darkness. To the world above, he was just a madman who had vanished; but to himself, he was finally home. In this eternal abyss, the seawater was no longer a poison to drown him, but a cradle to hold him. His old obsession had drifted away with the tide, and a new destiny had quietly arrived in the silent, dark depths of the sea.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 After the Fall | <a href="index.html">Back to Homepage</a></p>
+    </footer>
+
+    <script>
+        const nav = document.querySelector('nav');
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+
+        function updateNav() {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                nav.classList.add('hidden');
+            } else {
+                nav.classList.remove('hidden');
+            }
+
+            lastScrollY = currentScrollY;
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateNav);
+                ticking = true;
+            }
+        }, { passive: true });
+    </script>
+</body>
+</html>

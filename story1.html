@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyjafjalla's Story - After the Fall</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 15px 25px;
+            z-index: 100;
+            background: transparent;
+            transition: all 0.3s ease;
+            text-align: right;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        nav.scrolled {
+            background-color: rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        nav.hidden {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.3em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #4facfe;
+        }
+
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            background: url('image/11.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.2), rgba(255,255,255,0.3));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding-bottom: 40px;
+        }
+
+        .hero-overlay h1 {
+            font-family: 'Brush Script MT', 'Segoe Script', cursive;
+            font-size: 3em;
+            color: white;
+            font-weight: normal;
+            opacity: 0.9;
+            letter-spacing: 6px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-section {
+            animation: slideDown 0.8s ease-out forwards;
+        }
+
+        main {
+            opacity: 0;
+            animation: slideUp 0.8s ease-out 0.3s forwards;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 30px;
+        }
+
+        .story-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .story-header h2 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .story-header .author {
+            color: #5a6c7d;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+
+        .story-content {
+            font-size: 1.1em;
+            color: #4a5568;
+            text-align: justify;
+        }
+
+        .story-content p {
+            margin-bottom: 1.5em;
+            text-indent: 2em;
+        }
+
+        .story-image {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .story-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .story-image .caption {
+            margin-top: 15px;
+            color: #666;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        .placeholder-image {
+            background: linear-gradient(145deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 8px;
+            padding: 80px 40px;
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            border: 1px solid #e0e0e0;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            margin-top: 60px;
+            border-top: 1px solid #eee;
+        }
+
+        footer p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #4facfe;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Homepage</a>
+        <a href="about.html">About Us</a>
+    </nav>
+
+    <div class="hero-section">
+        <div class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+    </div>
+
+    <main>
+        <div class="story-header">
+            <h2>Eyjafjalla's Story</h2>
+            <p class="author">By Rex</p>
+        </div>
+
+        <div class="story-content">
+            <p>In a room that felt more like a laboratory than a home, a woman studied a heap of soil with meticulous care, blending it with brightly colored reagents. Sometimes she would be fully concentrating on operating all kinds of instruments; sometimes she would just quietly gaze at the fiery red soil, as if trying to uncover the hidden secrets within the volcano.</p>
+
+            <p>At the edge of the workbench stood a little girl. Still too small to see the tabletop clearly, she watched her mother in silence. In her eyes, the soil shimmered with tiny, warm red sparks.</p>
+
+            <p>Her father entered the room. "My class is over," he said. "We should go."</p>
+
+            <p>The woman carefully packed away her tools and the soil sample, then turned to her daughter, who had returned to the small desk in the corner with a book.</p>
+
+            <p>"Adele," she said gently, "your father and I are going out to collect samples. We'll be back soon. Stay home, and don't wander off, alright?"</p>
+
+            <p>Adele nodded. She was used to their departures. She knew they were renowned volcanologists and dreamed of becoming one herself. She didn't know this would be the last time she would ever see them.</p>
+
+            <p>The volcano erupted without mercy. Lava surged over the mountain like a living tide, incinerating plants and claiming the lives of two exceptional scientists.</p>
+
+            <p>Their colleagues told Adele the truth. They knew she was a resilient child. Upon hearing the news, she did not scream. Only two searing tears ran down her cheeks, hot as magma, soaking the pages of her open book.</p>
+        </div>
+
+        <div class="story-content">
+            <p>For the next ten years, she lived alone in that house, studying with fierce determination. She pored over her parents' books and notes until their handwriting felt like living memory. By the age most began university, Adele had already become a leading figure in volcanology.</p>
+
+            <p>Still, she never found the glowing red soil of her childhood, no matter how many expeditions she led.</p>
+
+            <p>One day, during a routine survey, an unnatural wind rose, filling the air with blinding ash. Her protective gear kept her breathing steady, but the world dissolved into gray chaos. Disoriented, Adele felt a quiet, familiar pull guiding her forward. It led her to a cave she had never seen. Deeper inside, she found it at last — the same faintly glowing soil, now carpeted with vivid fire-red grasses and flowers. Overjoyed, she knelt to examine them.</p>
+
+            <p>A warm voice echoed from the depths of the cave.</p>
+
+            <p>"What an adorable young lady!"</p>
+
+            <p>Adele's heart jolted. Swallowing her fear, she moved toward the sound.</p>
+
+            <p>Beside a lake of molten lava lounged a massive sheep with blazing crimson fleece. It carried an air of ancient, lazy authority.</p>
+
+            <p>"So their child has grown this big already," it murmured. Noticing her shock, the sheep tilted its head. "Oh? You can actually see me? Then allow me to introduce myself. I am the Lord of Sheep. You may call me Dolly."</p>
+
+            <p>(Dolly was a Beast Lord — an existence of mysterious power and extraordinary intelligence.)</p>
+
+            <p>"Mr. Dolly… did you know my parents?" Adele asked.</p>
+
+            <p>"I did," he replied softly. "They were remarkable volcanologists. When the eruption began, they were here studying these plants—They turn to ash the moment they leave this mountain. I tried to protect them… but I failed."</p>
+
+            <p>He nodded toward a shadowed corner. There lay the remnants of her parents: two half-charred coats and blackened equipment.</p>
+
+            <p>Adele knelt before them. As her fingers traced the scorched fabric, years of suppressed grief finally broke free. She cried — raw, helpless sobs that belonged to the little girl she once was.</p>
+
+            <p>When the tears finally quieted, she began gathering the relics. Between the coats she found a notebook, and inside it, a letter written on fireproof paper.</p>
+
+            <p>To our dearest Adele Naumann,</p>
+
+            <p>If you're reading this, the mountain has taken us.</p>
+
+            <p>We knew the risks. Volcanoes are both beautiful and cruel, so we wrote this letter long ago.</p>
+
+            <p>We are sorry we won't be there to watch you grow. That regret is the one thing we cannot change.</p>
+
+            <p>But we believe in you. You have always been quietly strong, kinder than you show, and braver than any child should need to be. You will survive this. You will grow.</p>
+
+            <p>One day you will choose your own path. Whether you follow our footsteps into the fire or walk an entirely different road, both choices are right — as long as they are yours.</p>
+
+            <p>Do not live inside your grief. Mourn if you must, but then look forward. Eat well. Sleep when you can. Let others help you. And when the world feels cold, remember this: you were loved, completely and without condition.</p>
+
+            <p>Wherever you go, our love goes with you.</p>
+
+            <p>With all our love,</p>
+
+            <p>Mom and Dad</p>
+
+            <p>As Adele finished reading, fresh tears fell. One drop struck the cave floor.</p>
+
+            <p>From that spot, a sapling pushed through the stone, growing rapidly until it shaped itself into a elegant staff. A warm, flame-red glow pulsed within its core.</p>
+
+            <p>Dolly spoke gently. "It seems this is the final gift they left for you. Treasure it."</p>
+
+            <p>Adele pulled the staff free and clutched it tightly to her chest.</p>
+
+            <p>Years later, stories began to spread of a formidable caster who wandered between volcanoes.</p>
+
+            <p>Her name was Eyjafjalla — the name of the volcano that had taken her parents and given her a new destiny.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 After the Fall | <a href="index.html">Back to Homepage</a></p>
+    </footer>
+
+    <script>
+        const nav = document.querySelector('nav');
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+
+        function updateNav() {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                nav.classList.add('hidden');
+            } else {
+                nav.classList.remove('hidden');
+            }
+
+            lastScrollY = currentScrollY;
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateNav);
+                ticking = true;
+            }
+        }, { passive: true });
+    </script>
+</body>
+</html>

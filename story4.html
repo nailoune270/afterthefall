@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Dream - After the Fall</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 15px 25px;
+            z-index: 100;
+            background: transparent;
+            transition: all 0.3s ease;
+            text-align: right;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        nav.scrolled {
+            background-color: rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        nav.hidden {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.3em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #4facfe;
+        }
+
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            background: url('image/4.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.2), rgba(255,255,255,0.3));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding-bottom: 40px;
+        }
+
+        .hero-overlay h1 {
+            font-family: 'Brush Script MT', 'Segoe Script', cursive;
+            font-size: 3em;
+            color: white;
+            font-weight: normal;
+            opacity: 0.9;
+            letter-spacing: 6px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-section {
+            animation: slideDown 0.8s ease-out forwards;
+        }
+
+        main {
+            opacity: 0;
+            animation: slideUp 0.8s ease-out 0.3s forwards;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 30px;
+        }
+
+        .story-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .story-header h2 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .story-header .author {
+            color: #5a6c7d;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+
+        .story-content {
+            font-size: 1.1em;
+            color: #4a5568;
+            text-align: justify;
+        }
+
+        .story-content p {
+            margin-bottom: 1.5em;
+            text-indent: 2em;
+        }
+
+        .story-image {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .story-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .story-image .caption {
+            margin-top: 15px;
+            color: #666;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        .placeholder-image {
+            background: linear-gradient(145deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 8px;
+            padding: 80px 40px;
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            border: 1px solid #e0e0e0;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            margin-top: 60px;
+            border-top: 1px solid #eee;
+        }
+
+        footer p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #4facfe;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Homepage</a>
+        <a href="about.html">About Us</a>
+    </nav>
+
+    <div class="hero-section">
+        <div class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+    </div>
+
+    <main>
+        <div class="story-header">
+            <h2>A Dream</h2>
+            <p class="author">By Victoria</p>
+        </div>
+
+        <div class="story-content">
+            <p>I'm trapped in a hospital, where my parents work in.</p>
+
+            <p>Before, this place is consisted of a four-story outpatient building, a six-story orthopedics building, and a tall inpatient tower. However, everything has turned into six stories now. Parts of the buildings that were once disconnected have become linked together. And I, who was just on the fourth floor, is on the sixth now.</p>
+
+            <p>Something's wrong. Everything is wrong.</p>
+
+            <p>With no extra information, I don't want to act carelessly. But waiting until die is stupid, too. I start exploring the sixth floor.</p>
+
+            <p>The entire floor has been turned into gastroenterology department.</p>
+
+            <p>The corridor where I am hasn't changed. When I turn the corner, a skywalk appears out of nowhere, connecting the sixth floor of the former orthopedics building to a non-existent sixth floor of the outpatient building. There are no lights on the skywalk. It's pitch black, like the gaping maw of a giant beast ready to swallow me.</p>
+
+            <p>Aside from the floor, the left, right, and upper sides are all made of transparent material. In normal situation, I would be able to see the busy traffic on the road from this distance. But right now, I feel abandoned by the world. I can neither see nor hear anything beyond the hospital.</p>
+
+            <p>I walk forward. The actual distance of this path seems much longer than it looks. In my eyes, it's just about a hundred meters, but I've been walking for nearly ten minutes.</p>
+
+            <p>Finally, a faint white light appears in the distance. On high alert, I keep moving.</p>
+
+            <p>This newly appeared sixth floor of the outpatient building copies the layout of the existing floors. At a glance, I can't find anything unusual, so I slow down and continue.</p>
+
+            <p>The air is filled with the smell of disinfectant, mixed with the scent of rust. The rusty odor grows stronger the deeper I go, gradually covering the disinfectant.</p>
+
+            <p>I frown. The doors on both sides are tightly shut, and the windows have turned cloudy, which are clear before, making it impossible to see anything inside.</p>
+
+            <p>Suddenly, I hear a squelching sound, followed by a strange sensation under my left foot. It feels like stepping on a squishy, bursting bug, but it's much larger, at least wider than my foot.</p>
+
+            <p>I freeze immediately, stop every behavior and look down.</p>
+
+            <p>Since I stepped under the lights, I've been paying attention to everything around me. The walls with medical notice boards, the clean floor tiles, everything looks normal. Logically, I shouldn't have stepped on anything.</p>
+
+            <p>And indeed, I could see nothing at all.</p>
+
+            <p>I lift my left foot and step back. The way I came seems more safe.</p>
+
+            <p>Before I can process the bright red footprint in front of me, a familiar sound comes from behind. I've stepped on it again.</p>
+
+            <p>I stop moving and look back.</p>
+
+            <p>The dripping bloodstains end right at my left foot behind me. I am overwhelmed with confuse. Staring at my feet clearly won't help the situation. I glance around, and as expected, find nothing.</p>
+
+            <p>I look down at my left foot again, and to my surprise, the bloodstain is spreading outward. only a few centimeters, not far. What is important isn't the area, but the depth.</p>
+        </div>
+
+        <div class="story-content">
+            <p>The depth of this pool of blood clearly exceeds what surface tension would allow. It seeps upward from the heel, slightly deeper at the front and back than in the middle, confirming that it didn't form naturally.</p>
+
+            <p>Not wanting the blood to soak into my shoe, I try to lift my foot and keep going.</p>
+
+            <p>A faint pulling sensation comes from under my foot, not too obstructive.</p>
+
+            <p>But time ticking, the pulling lingers, growing stronger and stronger.</p>
+
+            <p>When it takes nearly seven or eight tenths of my strength to lift my leg, I stop.</p>
+
+            <p>Unexpectedly, that becomes my final step. The pulling force grows suddenly, far faster than I anticipated.</p>
+
+            <p>I'm stuck in place.</p>
+
+            <p>Then, a powerful pull rises from the ground. I fall onto the floor.</p>
+
+            <p>It doesn't hurt. The sticky substance seems to act as a cushion.</p>
+
+            <p>But falling isn't the end. I'm dragged further downward, passing through the floor. My vision fades to darkness, then flashes bright again.</p>
+
+            <p>A sense of weightlessness washes over me.</p>
+
+            <p>I struggle to twist my body, getting my feet underneath me just before landing.</p>
+
+            <p>After steadying myself, I look around and find I'm on the fifth floor.</p>
+
+            <p>I feel liquid dripping onto my forehead and look up in confusion.</p>
+
+            <p>The ceiling is a troubled mix of reds, from deep crimson to bright scarlet, together with yellow and white.</p>
+
+            <p>It's no longer just the rusty smell from the sixth floor. The entire space here is filled with a nauseating stench.</p>
+
+            <p>Less than two meters above my head hang dense, tangled intestines. The feeling is deeply unpleasant.</p>
+
+            <p>They move occasionally, as if alive. Some are intact, others are torn open in several places, dripping blood downward. They're also covered in yellow, grainy protrusions, presumably fat. And the white I saw earlier only grows on parts of the intestines, which is probably pus.</p>
+
+            <p>The ceiling of the fifth floor must share the same origin as the floor of the sixth, both possessing a strong attractive force that weakens rapidly with distance.</p>
+
+            <p>However, it can not explain why I fell down and landed on the floor instead of being stuck to the ceiling like those intestines.</p>
+
+            <p>Also, there's no blood on my body, and my shoe soles look the same as before.</p>
+
+            <p>Too many unscientific things have happened tonight.</p>
+
+            <p>I open my eyes, but I keep opening my eyes before.</p>
+
+            <p>Being waked by doctors, they tell my that my operation is wonderful.</p>
+
+            <p>The dream before might be the fight between the disease and me. The result is inconclusive, but it is worth a battle for a good ending.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 After the Fall | <a href="index.html">Back to Homepage</a></p>
+    </footer>
+
+    <script>
+        const nav = document.querySelector('nav');
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+
+        function updateNav() {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                nav.classList.add('hidden');
+            } else {
+                nav.classList.remove('hidden');
+            }
+
+            lastScrollY = currentScrollY;
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateNav);
+                ticking = true;
+            }
+        }, { passive: true });
+    </script>
+</body>
+</html>

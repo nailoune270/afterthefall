@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Grown-Up Peter Pan - After the Fall</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 15px 25px;
+            z-index: 100;
+            background: transparent;
+            transition: all 0.3s ease;
+            text-align: right;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        nav.scrolled {
+            background-color: rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        nav.hidden {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.3em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #4facfe;
+        }
+
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            background: url('image/3.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.2), rgba(255,255,255,0.3));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding-bottom: 40px;
+        }
+
+        .hero-overlay h1 {
+            font-family: 'Brush Script MT', 'Segoe Script', cursive;
+            font-size: 3em;
+            color: white;
+            font-weight: normal;
+            opacity: 0.9;
+            letter-spacing: 6px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-section {
+            animation: slideDown 0.8s ease-out forwards;
+        }
+
+        main {
+            opacity: 0;
+            animation: slideUp 0.8s ease-out 0.3s forwards;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 30px;
+        }
+
+        .story-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .story-header h2 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .story-header .author {
+            color: #5a6c7d;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+
+        .story-content {
+            font-size: 1.1em;
+            color: #4a5568;
+            text-align: justify;
+        }
+
+        .story-content p {
+            margin-bottom: 1.5em;
+            text-indent: 2em;
+        }
+
+        .story-image {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .story-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .story-image .caption {
+            margin-top: 15px;
+            color: #666;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        .placeholder-image {
+            background: linear-gradient(145deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 8px;
+            padding: 80px 40px;
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            border: 1px solid #e0e0e0;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            margin-top: 60px;
+            border-top: 1px solid #eee;
+        }
+
+        footer p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #4facfe;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Homepage</a>
+        <a href="about.html">About Us</a>
+    </nav>
+
+    <div class="hero-section">
+        <div class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+    </div>
+
+    <main>
+        <div class="story-header">
+            <h2>The Grown-Up Peter Pan</h2>
+            <p class="author">By Helen</p>
+        </div>
+
+        <div class="story-content">
+            <p>There lies a secret in Everland.</p>
+
+            <p>On quiet nights with a bright moon and scattered stars, every child in Everland grows a pair of wings. They slip silently out their windows, soar over towering buildings and quiet farmlands, and gather at Neverland as if bound by an unspoken promise.</p>
+
+            <p>Neverland is filled with the songs of birds and the fragrance of flowers, where spring lasts all year round. However, on the other side of Neverland lives the evil Captain Hook. He has a hooked nose and a metal hook for a hand. He has always envied the carefree happiness of the children of Neverland and has tried everything to destroy it.</p>
+
+            <p>But he has never succeeded. This is all thanks to the swords of the children of Neverland.</p>
+
+            <p>Like wings, the sword is something every child of Neverland is born with. When a child of Neverland holds their sword, it feels as natural as holding their parent's hand.</p>
+
+            <p>With this sword, we have repeatedly defeated Captain Hook, driving him to the other side of the island.</p>
+
+            <p>And tonight, we are about to launch a full-scale attack on Captain Hook.</p>
+
+            <p>Oh, I forgot to introduce myself. My name is Lin, the leader of the children. My sword is the sharpest among all, unrivaled in its edge.</p>
+
+            <p>"River, tonight you're in charge of supporting us from below."</p>
+
+            <p>My plan was well-laid, and I was confident we could capture Captain Hook in one strike. My friends seemed just as determined.</p>
+
+            <p>But I never expected an accident to happen.</p>
+
+            <p>I gripped my sword, clashing with Captain Hook, the metallic clang of sword against hook piercing the air. In a moment of carelessness, Captain Hook struck my wing, and I plummeted from the sky.</p>
+
+            <p>"River!"</p>
+
+            <p>I called out anxiously, flailing my arms in the air, struggling to regain my balance.</p>
+
+            <p>I thought River would catch me. But I saw her face turn pale, hesitating as she took a step back. I crashed hard onto the soil.</p>
+
+            <p>No matter how many times I tried, I could no longer lift my sword. Helpless, we could only scurrying away in panic, with Captain Hook's arrogant laughter ringing behind us.</p>
+
+            <p>We stumbled back home in disgrace.</p>
+
+            <p>The second night, we returned to Neverland. I intended to confront River, but before I could speak, she said, "Lin, I don't want to come to Neverland anymore." Her eyes were downcast, her emotions unreadable. "I can't defeat Captain Hook."</p>
+
+            <p>"Why?" I asked in surprise.</p>
+
+            <p>"I can't fly anymore."</p>
+
+            <p>With a trace of despair, River showed me her wings. There was a large tear in them. She told me she even wanted to break her wings off.</p>
+
+            <p>The next night, River indeed did not appear in Neverland.</p>
+
+            <p>After the initial disappointment, the remaining children and I regrouped, preparing for the final showdown with Captain Hook. The pressure of the battle weighed on us, and there were occasional conflicts among friends. But as long as we thought about life after defeating Captain Hook, we mustered our courage again.</p>
+        </div>
+
+        <div class="story-content">
+            <p>The day of the final battle arrived.</p>
+
+            <p>I took my sharp, peerless sword and thrust it fiercely at Captain Hook. This time, we were well-prepared, and every move Captain Hook made was within our expectations.</p>
+
+            <p>Our efforts paid off—we succeeded.</p>
+
+            <p>Captain Hook let out a scream and plunged into the deepest waters of Neverland. A few bubbles rose to the surface, but soon, all was quiet again.</p>
+
+            <p>We sang, danced, and celebrated all night, reveling in our hard-won victory.</p>
+
+            <p>But for some reason, I felt a tinge of melancholy.</p>
+
+            <p>We had won. Yes, we had defeated Captain Hook, the most sinister and cunning villain. But now, what were we supposed to do next?</p>
+
+            <p>After drifting through days in a daze, carefree and without a care, on an ordinary day, as I picked up my sword to examine it closely, I realized it had rusted.</p>
+
+            <p>I stared at the sword in disbelief. This sword had been with me for as long as I could remember. It was the sharpest sword in the world, impervious to wind and rain. At least, that's what I had always believed.</p>
+
+            <p>Now, reality seemed to have given me a hard slap in the face. I could almost hear someone mocking my naivety.</p>
+
+            <p>I no longer spent my days playing with my friends. I carefully placed the sword in a box and carried it on my back.</p>
+
+            <p>I left Neverland and set out on a journey to find someone who could remove the rust.</p>
+
+            <p>Unlike Neverland, where aside from thinking about how to deal with Captain Hook, I never had to worry about anything else, this new path was shrouded in fog. I didn't know where it led or who I was up against. But once you leave Neverland, you lose the right to return.</p>
+
+            <p>Stumbling along the way, I rested by a small river. I thought of my friend again.</p>
+
+            <p>I looked down into the water and was shocked to find that, at some point, a tear had appeared in my wings as well.</p>
+
+            <p>I am not Peter Pan.</p>
+
+            <p>I will never fly again.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 After the Fall | <a href="index.html">Back to Homepage</a></p>
+    </footer>
+
+    <script>
+        const nav = document.querySelector('nav');
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+
+        function updateNav() {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                nav.classList.add('hidden');
+            } else {
+                nav.classList.remove('hidden');
+            }
+
+            lastScrollY = currentScrollY;
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateNav);
+                ticking = true;
+            }
+        }, { passive: true });
+    </script>
+</body>
+</html>
